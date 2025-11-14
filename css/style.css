@@ -703,3 +703,43 @@ textarea {
   to {
     opacity: 0;
     top: 27px; } }
+
+/* Achievements Section Enhancements */
+#achievements .about__content-details-para {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-left: 4px solid #0062b9;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  transition: transform .3s, box-shadow .3s; }
+  #achievements .about__content-details-para:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 98, 185, 0.1); }
+
+/* Education Section Enhancements */
+#education .about__content-main {
+  max-width: 100%; }
+
+#education .about__content-details-para {
+  font-size: 1.8rem;
+  color: grey;
+  line-height: 1.7; }
+
+/* Enhanced project row hover effects */
+.projects__row {
+  transition: transform .3s; }
+  .projects__row:hover {
+    transform: translateY(-5px); }
+
+.projects__row-img {
+  transition: transform .5s; }
+  .projects__row:hover .projects__row-img {
+    transform: scale(1.05); }
+
+/* Skills hover effect */
+.skills__skill {
+  transition: transform .2s, background .2s; }
+  .skills__skill:hover {
+    transform: translateY(-3px);
+    background: rgba(0, 98, 185, 0.2);
+    color: #0062b9; }
