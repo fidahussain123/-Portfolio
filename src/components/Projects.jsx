@@ -2,11 +2,18 @@ import '../styles/style.css';
 
 const projects = [
     {
+        title: "GLUGs & Robotics Website",
+        category: "Community Platform",
+        desc: "A dedicated website for the GLUGs and Robotics community, featuring event updates, resources, and member showcases.",
+        tech: ["React", "Node.js", "Tailwind CSS"],
+        image: "/assets/jpeg/project.png"
+    },
+    {
         title: "Krewsup Platform",
         category: "Marketplace",
         desc: "A talent marketplace for gig hiring with streamlined onboarding, posting, and matching flows built for scale.",
         tech: ["React", "Node.js", "Express"],
-        image: "/assets/jpeg/project.png"
+        image: "/images/Screenshot 2025-11-14 161855.png"
     },
     {
         title: "Cheqmate",
@@ -14,13 +21,6 @@ const projects = [
         desc: "Comprehensive tracking suite for outdoor advertising with analytics, payments, and campaign insights delivered through a React-first UI.",
         tech: ["React", "Node.js", "MySQL", "Express"],
         image: "/images/project-mockup-example.jpg"
-    },
-    {
-        title: "Eupheity App",
-        category: "Mobile Learning",
-        desc: "An accessibility-focused mobile app using React Native, delivering user-friendly learning tools and custom workflows for differently-abled students.",
-        tech: ["React Native", "Node.js", "Express", "AWS"],
-        image: "/assets/png/pic.jpeg"
     }
 ];
 

@@ -15,7 +15,7 @@ const experiences = [
     },
     {
         role: "Full-Stack Developer",
-        company: "Eupheity",
+        company: "Krewsup Technologies",
         date: "Nov 2023 – Jan 2024",
         desc: "Created an accessibility-focused mobile app using React Native, delivering user-friendly learning tools and custom workflows for differently-abled students."
     }
