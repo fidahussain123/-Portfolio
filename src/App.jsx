@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Marquee from './components/Marquee';
 import About from './components/About';
+import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './styles/style.css';
-import './styles/components.css'; // We will create this for specific aesthetic styles
+import './styles/components.css';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <About />
+        <Skills />
         <Experience />
         <Projects />
         <Contact />
