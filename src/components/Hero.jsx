@@ -1,50 +1,81 @@
-import '../styles/style.css';
-
 export default function Hero() {
     return (
         <section id="top" className="hero-section">
-            <div className="container hero-container animate-fade-in-up">
+            <div className="container">
+                <div className="hero-grid">
+                    <div className="hero-main">
+                        <div className="hero-meta">
+                            <span className="hero-meta__dot" aria-hidden="true" />
+                            <span>Available · Bengaluru, IN · 2026</span>
+                        </div>
 
-                <div className="hero-content">
-                    <p className="hero-subtitle text-gradient animate-fade-in-up delay-1">
-                        Hi, my name is
-                    </p>
-                    <h1 className="hero-title animate-fade-in-up delay-2">
-                        Fida Hussain.
-                    </h1>
-                    <h2 className="hero-title second text-muted animate-fade-in-up delay-2">
-                        I engineer modern systems.
-                    </h2>
+                        <h1 className="hero-headline">
+                            <span className="hero-headline__row delay-1">
+                                <span>Fida Hussain.</span>
+                            </span>
+                            <span className="hero-headline__row delay-2">
+                                <span>
+                                    A <em className="hero-headline__amp">full-stack</em>
+                                </span>
+                            </span>
+                            <span className="hero-headline__row delay-3">
+                                <span>
+                                    <span className="hero-headline__rotator" aria-hidden="true">
+                                        <span>engineer.</span>
+                                        <span>coder.</span>
+                                        <span>builder.</span>
+                                        <span>shipper.</span>
+                                        <span>engineer.</span>
+                                    </span>
+                                    <span className="visually-hidden">engineer and coder.</span>
+                                </span>
+                            </span>
+                        </h1>
 
-                    <p className="hero-description text-lead animate-fade-in-up delay-3">
-                        I'm a full-stack engineer and computer science undergrad specializing in building scalable backend services and high-quality, product-focused front-end experiences. Currently focused on delivering data-driven solutions and robust architectures.
-                    </p>
+                        <p className="hero-tagline">
+                            Full-stack engineer and coder shipping <em>web</em>, <em>mobile</em>,
+                            and <em>cloud</em> products end-to-end — React, React Native, Node,
+                            and modern serverless. Comfortable across the whole stack, from UI
+                            polish to API design to deployment.
+                        </p>
 
-                    <div className="hero-cta animate-fade-in-up delay-3">
-                        <a href="#projects" className="btn btn--gradient">
-                            Explore Projects
-                        </a>
-                        <a href="#about" className="btn btn--outline">
-                            Learn More
-                        </a>
+                        <div className="hero-cta">
+                            <a href="#projects" className="btn btn--primary">Selected work</a>
+                            <a href="#skills" className="btn btn--ghost">View capabilities</a>
+                        </div>
+
+                        <ul className="hero-stats" aria-label="At a glance">
+                            <li>
+                                <strong>3<sup style={{ fontSize: '0.5em' }}>+</sup></strong>
+                                <span>Years building</span>
+                            </li>
+                            <li>
+                                <strong>15<sup style={{ fontSize: '0.5em' }}>+</sup></strong>
+                                <span>Shipped projects</span>
+                            </li>
+                            <li>
+                                <strong>04</strong>
+                                <span>Disciplines</span>
+                            </li>
+                        </ul>
                     </div>
-                </div>
 
-                {/* Abstract Glowing Orb Graphic for aesthetics */}
-                <div className="hero-graphic desktop-only">
-                    <div className="glow-orb primary"></div>
-                    <div className="glow-orb secondary"></div>
-                    <div className="glass-panel graphic-card">
-                        <pre><code>
-                            <span className="code-keyword">const</span> <span className="code-var">developer</span> = {'{'}
-                            <br />  name: <span className="code-string">'Fida Hussain'</span>,
-                            <br />  role: <span className="code-string">'Full Stack Engineer'</span>,
-                            <br />  passion: <span className="code-string">'Building scalable products'</span>,
-                            <br />{'}'};
-                        </code></pre>
-                    </div>
+                    <aside className="hero-portrait" aria-label="Portrait">
+                        <div className="hero-portrait__frame">
+                            <img
+                                src="/assets/png/linkedin.jpeg"
+                                alt="Fida Hussain S P"
+                                loading="eager"
+                                decoding="async"
+                            />
+                            <span className="hero-portrait__badge">FH · ’26</span>
+                        </div>
+                        <div className="hero-portrait__caption">
+                            <span>Fida Hussain S P</span>
+                            <em>Engineer</em>
+                        </div>
+                    </aside>
                 </div>
-
             </div>
         </section>
     );

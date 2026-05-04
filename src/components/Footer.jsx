@@ -1,35 +1,39 @@
-import '../styles/style.css';
+const socials = [
+    { label: 'GitHub',    href: 'https://github.com/fidahussain123' },
+    { label: 'LinkedIn',  href: 'https://linkedin.com/in/fidahussainsp' },
+    { label: 'Twitter',   href: 'https://twitter.com/your-twitter' },
+    { label: 'Instagram', href: 'https://www.instagram.com/fidahussainsp/' },
+];
 
 export default function Footer() {
+    const year = new Date().getFullYear();
+
     return (
         <footer className="footer">
             <div className="container">
-                <div className="footer-content">
+                <div className="footer-grid">
+                    <h2 className="footer-mark">
+                        Building quietly,
+                        <br />shipping loudly.
+                    </h2>
 
-                    <div className="footer-socials">
-                        <a href="https://github.com/fidahussain123" target="_blank" rel="noreferrer" className="social-link" aria-label="GitHub">
-                            <img src="/assets/png/github-ico.png" alt="GitHub" className="social-icon" />
-                        </a>
-                        <a href="https://linkedin.com/in/fidahussainsp" target="_blank" rel="noreferrer" className="social-link" aria-label="LinkedIn">
-                            <img src="/assets/png/linkedin-ico.png" alt="LinkedIn" className="social-icon" />
-                        </a>
-                        <a href="https://twitter.com/your-twitter" target="_blank" rel="noreferrer" className="social-link" aria-label="Twitter">
-                            <img src="/assets/png/twitter-ico.png" alt="Twitter" className="social-icon" />
-                        </a>
-                        <a href="https://www.instagram.com/fidahussainsp/" target="_blank" rel="noreferrer" className="social-link" aria-label="Instagram">
-                            <img src="/assets/png/insta-ico.png" alt="Instagram" className="social-icon" />
-                        </a>
-                    </div>
-
-                    <div className="footer-credits">
-                        <a href="https://github.com/iamj3/portfolio" className="text-muted hover-glow">
-                            Inspired by iamJ3
-                        </a>
-                        <p className="text-muted mt-2">
-                            Designed & Built by Fida Hussain S P
+                    <div>
+                        <p className="footer-tagline">
+                            Always open to new ideas, collaborations, and well-defined problems.
                         </p>
+                        <div className="footer-socials">
+                            {socials.map((s) => (
+                                <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
+                                    <span>{s.label}</span>
+                                </a>
+                            ))}
+                        </div>
                     </div>
+                </div>
 
+                <div className="footer-bottom">
+                    <span>© {year} · Fida Hussain S P</span>
+                    <span>Designed &amp; Engineered in Bengaluru</span>
                 </div>
             </div>
         </footer>
