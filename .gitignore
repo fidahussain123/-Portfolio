@@ -1,0 +1,5 @@
+node_modules/
+.claude/
+.agent-mail/
+*.log
+.DS_Store

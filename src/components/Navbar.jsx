@@ -35,34 +35,36 @@ export default function Navbar() {
       </div>
 
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="container nav-container">
-          <a href="#top" className="nav-mark" onClick={() => setMenuOpen(false)}>
-            <span className="nav-mark__sigil">FH</span>
-            <span className="nav-mark__name">Fida Hussain</span>
-            <span className="nav-mark__role" aria-hidden="true">— Engineer</span>
-          </a>
+        <div className="container">
+          <div className="nav-inner">
+            <a href="#top" className="nav-brand" onClick={() => setMenuOpen(false)}>
+              <span className="nav-brand__sigil">FH</span>
+              <span className="nav-brand__name">Fida Hussain</span>
+              <span className="nav-brand__role" aria-hidden="true">— Engineer</span>
+            </a>
 
-          <nav className="nav-links" aria-label="Primary">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link">
-                <span className="nav-link__num">{link.num}</span>
-                <span>{link.label}</span>
-              </a>
-            ))}
-          </nav>
+            <nav className="nav-links" aria-label="Primary">
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href} className="nav-link">
+                  <span className="nav-link__num">{link.num}</span>
+                  <span>{link.label}</span>
+                </a>
+              ))}
+            </nav>
 
-          <a href="#contact" className="nav-cta">Get in touch</a>
+            <a href="#contact" className="nav-cta">Get in touch</a>
 
-          <button
-            className="nav-hamburger"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation"
-            aria-expanded={menuOpen}
-          >
-            <span className={`hamburger-line ${menuOpen ? 'open' : ''}`} />
-            <span className={`hamburger-line ${menuOpen ? 'open' : ''}`} />
-            <span className={`hamburger-line ${menuOpen ? 'open' : ''}`} />
-          </button>
+            <button
+              className="nav-burger"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation"
+              aria-expanded={menuOpen}
+            >
+              <span className={menuOpen ? 'open' : ''} />
+              <span className={menuOpen ? 'open' : ''} />
+              <span className={menuOpen ? 'open' : ''} />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -75,16 +77,12 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             <span className="mobile-nav-link__num">{link.num}</span>
-            <span><em>{link.label}</em></span>
+            <span>{link.label}</span>
           </a>
         ))}
-        <a
-          href="#contact"
-          className="mobile-nav-link"
-          onClick={() => setMenuOpen(false)}
-        >
+        <a href="#contact" className="mobile-nav-link" onClick={() => setMenuOpen(false)}>
           <span className="mobile-nav-link__num">05</span>
-          <span><em>Contact</em></span>
+          <span>Contact</span>
         </a>
       </div>
     </>
