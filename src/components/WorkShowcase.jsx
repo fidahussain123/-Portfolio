@@ -1,4 +1,29 @@
+import { useEffect, useState } from 'react';
 import ImageStreamHero from '@/components/ui/image-stream-hero';
+
+/* Phones get a bigger corridor: the default world units are tuned for
+ * wide containers and read as a smudge at 375px. */
+function useMobile() {
+  const [mobile, setMobile] = useState(
+    () => window.matchMedia('(max-width: 760px)').matches,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 760px)');
+    const onChange = (e) => setMobile(e.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+  return mobile;
+}
+
+const MOBILE_PATH = {
+  cardWidth: 30,
+  cardHeight: 42,
+  birthHeight: 4,
+  exitHeight: 74,
+  railBirth: -18,
+  railExit: 58,
+};
 
 /* Real work interleaved with texture plates — the corridor alternates a
  * project frame with a texture so neither reads as filler. */
@@ -18,13 +43,15 @@ const STREAM = [
 ];
 
 export default function WorkShowcase() {
+  const mobile = useMobile();
   return (
     <section id="showcase" className="showcase" aria-label="Work showcase">
       <ImageStreamHero
         images={STREAM}
-        cards={10}
-        speed={24}
+        cards={mobile ? 8 : 10}
+        speed={mobile ? 22 : 24}
         axis={52}
+        path={mobile ? MOBILE_PATH : undefined}
         className="showcase__stream"
       >
         {/* Edge + centre treatment so the corridor melts into the page */}

@@ -1357,9 +1357,29 @@
   .nav-burger { display: flex; }
   .nav-brand__role { display: none; }
 
+  .section { padding: 4.5rem 0; }
+  .sec-head { margin-bottom: 3rem; }
   .skills-grid { grid-template-columns: 1fr; }
-  .showcase__stream { height: clamp(420px, 64vh, 560px); }
-  .showcase__sub { font-size: 1.55rem; }
+  .hero-name { font-size: clamp(4rem, 13.5vw, 9rem); }
+  .showcase { padding: 1rem 0; }
+  .showcase__stream { height: clamp(420px, 56vh, 520px); }
+  .showcase__sub { font-size: 1.55rem; max-width: 34ch; }
+  .showcase__content { gap: 1.6rem; }
+  .showcase__title { font-size: clamp(3.2rem, 9.5vw, 4.4rem); }
+  /* Text sits closer to the corridor on phones — stronger centre glow */
+  .showcase__veil {
+    background:
+      radial-gradient(72% 58% at 50% 47%,
+        rgba(255, 255, 255, 0.97) 0%,
+        rgba(255, 255, 255, 0.88) 46%,
+        rgba(255, 255, 255, 0) 78%),
+      linear-gradient(90deg,
+        var(--bg) 0%, rgba(255, 255, 255, 0) 12%,
+        rgba(255, 255, 255, 0) 88%, var(--bg) 100%),
+      linear-gradient(180deg,
+        var(--bg) 0%, rgba(255, 255, 255, 0) 18%,
+        rgba(255, 255, 255, 0) 82%, var(--bg) 100%);
+  }
   .footer-top { grid-template-columns: 1fr; gap: 3rem; }
   .about-stat__num { font-size: 3.2rem; }
   .about-stats { grid-template-columns: 1fr 1fr; }

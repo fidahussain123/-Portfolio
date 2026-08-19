@@ -69,12 +69,6 @@ export default function About() {
               feels reliable.
             </p>
 
-            <div className="about-meta">
-              <span className="pill">Bengaluru, India</span>
-              <span className="pill">B.E. CSE · REVA &rsquo;26</span>
-              <span className="pill">English · Hindi · Malayalam</span>
-            </div>
-
             <div className="about-copy__actions">
               <a href="#skills" className="btn btn--ghost">Explore skills</a>
               <a href="#contact" className="btn btn--primary">Start a project</a>

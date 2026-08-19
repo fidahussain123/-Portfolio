@@ -4,15 +4,6 @@ export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="container">
-        {/* Top row — availability + location */}
-        <div className="hero-head">
-          <span className="pill">
-            <span className="pill__dot" aria-hidden="true" />
-            Available for work
-          </span>
-          <span className="pill">Bengaluru, IN · 2026</span>
-        </div>
-
         {/* Body — intro + portrait */}
         <div className="hero-body">
           <div className="hero-intro">
