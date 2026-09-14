@@ -4,11 +4,12 @@ import ImageStreamHero from '@/components/ui/image-stream-hero';
 /* Phones get a bigger corridor: the default world units are tuned for
  * wide containers and read as a smudge at 375px. */
 function useMobile() {
-  const [mobile, setMobile] = useState(
-    () => window.matchMedia('(max-width: 760px)').matches,
-  );
+  // Starts false so the prerendered HTML and the first client render match;
+  // the effect corrects it straight after hydration.
+  const [mobile, setMobile] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 760px)');
+    setMobile(mq.matches);
     const onChange = (e) => setMobile(e.matches);
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);

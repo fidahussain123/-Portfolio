@@ -10,7 +10,9 @@ const stats = [
 
 /* Numbers count up once the section reveals — skipped for reduced motion. */
 function StatNum({ value, suffix, pad, group, revealed }) {
-  const [n, setN] = useState(0);
+  // Final value first, so prerendered HTML carries the real number; the
+  // count-up restarts from 0 once the (still hidden) card reveals.
+  const [n, setN] = useState(value);
   useEffect(() => {
     if (!revealed) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
