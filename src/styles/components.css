@@ -1023,6 +1023,28 @@
   color: var(--stone);
   flex: 1;
 }
+/* Outcome badge — same pill language as the experience date chips */
+.work-card__metric {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--r-pill);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.work-card__metric::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
 .work-card__tech {
   display: flex;
   flex-wrap: wrap;

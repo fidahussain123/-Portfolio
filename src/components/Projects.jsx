@@ -5,7 +5,8 @@ const projects = [
     index: '01',
     title: <>Pulse <em>Console</em></>,
     category: 'AI Analytics',
-    desc: 'An applied-LLM analytics console — live dashboards, conversational querying, and agentic report generation.',
+    desc: 'An applied-LLM analytics console — live dashboards, conversational querying, and agentic report generation, built on the Claude API.',
+    metric: 'Built on the Claude API',
     tech: ['React', 'Claude API', 'Node.js'],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
   },
@@ -14,6 +15,7 @@ const projects = [
     title: <>Zap<em>folio</em></>,
     category: 'SaaS · Portfolio Builder',
     desc: 'Turns a LinkedIn profile into a polished portfolio website in two clicks — themes, analytics, and 7000+ portfolios built.',
+    metric: '7,000+ portfolios built',
     tech: ['React', 'Node.js', 'LinkedIn API'],
     image: '/images/zapfolio-cover.svg',
   },
@@ -22,6 +24,7 @@ const projects = [
     title: <>Cheqmate <em>Ads</em></>,
     category: 'Ads Analytics',
     desc: 'A tracking suite for outdoor advertising — analytics, payments, and campaign insights through a React-first UI.',
+    metric: '~30% faster API response times',
     tech: ['React', 'Node.js', 'MySQL', 'Express'],
     image: '/images/project-mockup-example.jpg',
   },
@@ -67,6 +70,7 @@ function ProjectCard({ project, index }) {
         <span className="work-card__cat">{project.category}</span>
         <h3 className="work-card__title">{project.title}</h3>
         <p className="work-card__desc">{project.desc}</p>
+        {project.metric && <p className="work-card__metric">{project.metric}</p>}
         <ul className="work-card__tech">
           {project.tech.map((t) => <li key={t}>{t}</li>)}
         </ul>
