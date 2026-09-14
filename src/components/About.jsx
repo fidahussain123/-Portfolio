@@ -3,13 +3,13 @@ import useScrollReveal from '../hooks/useScrollReveal';
 
 const stats = [
   { value: 3, suffix: '+', label: 'Years building' },
-  { value: 15, suffix: '+', label: 'Projects shipped' },
+  { value: 7000, suffix: '+', group: true, label: 'Portfolios built' },
   { value: 4, suffix: '', pad: true, label: 'Core disciplines' },
-  { value: 24, suffix: 'h', label: 'Avg. reply time' },
+  { value: 24, suffix: 'h', label: 'Avg. reply time', featured: true },
 ];
 
 /* Numbers count up once the section reveals — skipped for reduced motion. */
-function StatNum({ value, suffix, pad, revealed }) {
+function StatNum({ value, suffix, pad, group, revealed }) {
   const [n, setN] = useState(0);
   useEffect(() => {
     if (!revealed) return;
@@ -30,7 +30,9 @@ function StatNum({ value, suffix, pad, revealed }) {
     return () => cancelAnimationFrame(raf);
   }, [revealed, value]);
 
-  const shown = pad ? String(n).padStart(2, '0') : String(n);
+  const shown = pad
+    ? String(n).padStart(2, '0')
+    : group ? n.toLocaleString('en-US') : String(n);
   return (
     <span className="about-stat__num">
       {shown}
@@ -78,8 +80,12 @@ export default function About() {
           <div className="about-side">
             <div className="about-stats">
               {stats.map((s, i) => (
-                <div className="about-stat" key={s.label} style={{ transitionDelay: `${i * 60}ms` }}>
-                  <StatNum value={s.value} suffix={s.suffix} pad={s.pad} revealed={revealed} />
+                <div
+                  className={`about-stat${s.featured ? ' about-stat--featured' : ''}`}
+                  key={s.label}
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <StatNum value={s.value} suffix={s.suffix} pad={s.pad} group={s.group} revealed={revealed} />
                   <span className="about-stat__label">{s.label}</span>
                 </div>
               ))}

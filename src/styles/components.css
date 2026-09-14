@@ -439,6 +439,14 @@
   text-transform: uppercase;
   color: var(--stone);
 }
+/* Featured stat — reply time is what clients weigh first, so it carries the accent */
+.about-stat--featured {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.about-stat--featured::after { opacity: 1; }
+.about-stat--featured .about-stat__num { color: var(--accent); }
+.about-stat--featured .about-stat__label { color: var(--accent-ink); }
 
 /* Currently — dark strip for contrast */
 .about-now {
