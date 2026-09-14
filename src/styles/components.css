@@ -1060,6 +1060,25 @@
   color: var(--stone);
 }
 
+/* Proof links — mono caps like the footer's social links */
+.work-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 0.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed var(--border-2);
+}
+.work-card__links a {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color var(--t-fast) var(--ease-out);
+}
+.work-card__links a:hover { color: var(--accent); }
+
 /* ==========================================================================
    CTA banner — dark contrast block
    ========================================================================== */

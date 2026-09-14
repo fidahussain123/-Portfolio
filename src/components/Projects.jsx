@@ -9,6 +9,8 @@ const projects = [
     metric: 'Built on the Claude API',
     tech: ['React', 'Claude API', 'Node.js'],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+    // TODO(fida): Pulse Console — add the live-site URL and/or GitHub repo URL
+    links: { live: '', repo: '' },
   },
   {
     index: '02',
@@ -18,6 +20,8 @@ const projects = [
     metric: '7,000+ portfolios built',
     tech: ['React', 'Node.js', 'LinkedIn API'],
     image: '/images/zapfolio-cover.svg',
+    // TODO(fida): Zapfolio — add the live-site URL and/or GitHub repo URL
+    links: { live: '', repo: '' },
   },
   {
     index: '03',
@@ -27,6 +31,8 @@ const projects = [
     metric: '~30% faster API response times',
     tech: ['React', 'Node.js', 'MySQL', 'Express'],
     image: '/images/project-mockup-example.jpg',
+    // TODO(fida): Cheqmate Ads — add the live-site URL and/or GitHub repo URL
+    links: { live: '', repo: '' },
   },
   {
     index: '04',
@@ -35,6 +41,8 @@ const projects = [
     desc: 'A gig-hiring marketplace with streamlined onboarding, posting, and matching flows built for scale.',
     tech: ['React', 'Node.js', 'Express'],
     image: '/images/Screenshot 2025-11-14 161855.png',
+    // TODO(fida): Krewsup Marketplace — add the live-site URL and/or GitHub repo URL
+    links: { live: '', repo: '' },
   },
   {
     index: '05',
@@ -43,6 +51,8 @@ const projects = [
     desc: 'Realtime fleet operations — dispatch, tracking, and driver settlements unified in a single ops surface.',
     tech: ['React Native', 'Node.js', 'PostgreSQL'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
+    // TODO(fida): Fleetline Ops — add the live-site URL and/or GitHub repo URL
+    links: { live: '', repo: '' },
   },
   {
     index: '06',
@@ -51,8 +61,29 @@ const projects = [
     desc: 'A dedicated space for the GLUGs and Robotics community — events, resources, member showcases.',
     tech: ['React', 'Node.js', 'Tailwind'],
     image: '/assets/jpeg/project.png',
+    // TODO(fida): GLUGs & Robotics — add the live-site URL and/or GitHub repo URL
+    links: { live: '', repo: '' },
   },
 ];
+
+/* A link renders only once its URL is filled in, so an empty slot never
+ * ships as a dead link. */
+function ProjectLinks({ links }) {
+  const items = [
+    ['Live site', links?.live],
+    ['GitHub', links?.repo],
+  ].filter(([, href]) => href);
+  if (!items.length) return null;
+  return (
+    <div className="work-card__links">
+      {items.map(([label, href]) => (
+        <a key={label} href={href} target="_blank" rel="noreferrer">
+          {label} ↗
+        </a>
+      ))}
+    </div>
+  );
+}
 
 function ProjectCard({ project, index }) {
   const [ref, revealed] = useScrollReveal();
@@ -74,6 +105,7 @@ function ProjectCard({ project, index }) {
         <ul className="work-card__tech">
           {project.tech.map((t) => <li key={t}>{t}</li>)}
         </ul>
+        <ProjectLinks links={project.links} />
       </div>
     </article>
   );
