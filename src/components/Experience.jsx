@@ -2,15 +2,7 @@ import useScrollReveal from '../hooks/useScrollReveal';
 
 const experiences = [
   {
-    date: '2025 — Now',
-    current: true,
-    role: 'Backend Engineer',
-    company: 'GoGig',
-    desc: 'Designing a SaaS platform that tracks and analyses offline marketing campaigns — API services, analytics pipelines, and real-time reporting dashboards.',
-    tags: ['Node.js', 'Analytics pipelines', 'SaaS'],
-  },
-  {
-    date: '2024 — Now',
+    date: 'Nov 2024 — Present',
     current: true,
     role: 'Backend Engineer',
     company: 'Krewsup',
@@ -18,10 +10,17 @@ const experiences = [
     tags: ['Node.js', 'Realtime', 'Marketplace'],
   },
   {
-    date: '2023 — 2024',
-    role: 'Full-stack Engineer',
-    company: 'Krewsup Technologies',
-    desc: 'Shipped an accessibility-first React Native app — learning tools and custom workflows for differently-abled students.',
+    date: 'Jan 2025 — Dec 2025',
+    role: 'Backend Engineer',
+    company: 'GoGig',
+    desc: 'Designing a SaaS platform that tracks and analyses offline marketing campaigns — API services, analytics pipelines, and real-time reporting dashboards.',
+    tags: ['Node.js', 'Analytics pipelines', 'SaaS'],
+  },
+  {
+    date: 'Nov 2023 — Jan 2024',
+    role: 'Full-Stack Developer Intern',
+    company: 'Eupheity',
+    desc: 'Built reusable React Native UI components for an accessibility-first mobile app, and integrated them with backend REST APIs.',
     tags: ['React Native', 'Accessibility', 'Education'],
   },
 ];
