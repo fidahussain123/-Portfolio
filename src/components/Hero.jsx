@@ -7,14 +7,15 @@ export default function Hero() {
         {/* Body — intro + portrait */}
         <div className="hero-body">
           <div className="hero-intro">
-            <div className="hero-intro__eyebrow eyebrow">Full-stack Engineer &amp; Coder</div>
+            <div className="hero-intro__eyebrow eyebrow">AI Integration &amp; Full-Stack Engineer</div>
             <p className="hero-intro__lead">
-              I build <em>web, mobile &amp; cloud</em> products end-to-end — from
-              the UI a user touches to the API that serves it.
+              I wire <em>LLMs and agent workflows</em> into products that ship —
+              from the UI a user touches to the API that serves it.
             </p>
             <p className="hero-intro__sub">
-              React, React Native, Node, and modern serverless. Based in
-              Bengaluru, shipping reliable software across the whole stack.
+              Claude and OpenAI APIs, RAG pipelines, and agentic systems — on a
+              React, React Native, and Node stack. Based in Bengaluru, shipping
+              software that holds up in production.
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn btn--primary">Selected work</a>
