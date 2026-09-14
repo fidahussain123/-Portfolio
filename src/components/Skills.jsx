@@ -43,7 +43,6 @@ const categories = [
     title: <>Frontend <em>Engineering</em></>,
     tagline: 'Polished, accessible UIs across web and mobile — pixel-perfect and fast.',
     items: ['React', 'React Native', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'],
-    depth: 9,
     best: 'Pixel-perfect React Native apps',
   },
   {
@@ -53,7 +52,6 @@ const categories = [
     title: <>Backend <em>Engineering</em></>,
     tagline: 'Scalable Node services, clean APIs, and well-modelled data layers.',
     items: ['Node.js', 'Express', 'REST', 'GraphQL', 'PostgreSQL', 'WebSockets'],
-    depth: 8,
     best: 'APIs that stay fast under load',
   },
   {
@@ -63,7 +61,6 @@ const categories = [
     title: <>Cloud &amp; <em>DevOps</em></>,
     tagline: 'Deploying low-latency systems on modern serverless rails.',
     items: ['AWS', 'Cloudflare Workers', 'Vercel', 'Supabase', 'Docker', 'CI / CD'],
-    depth: 7,
     best: 'Zero-downtime serverless deploys',
   },
   {
@@ -73,7 +70,6 @@ const categories = [
     title: <>Tooling &amp; <em>AI Workflows</em></>,
     tagline: 'Version control, testing, and a working knowledge of modern AI tooling.',
     items: ['Git & GitHub', 'Claude Code', 'Vitest', 'ESLint', 'Postman', 'LLM APIs'],
-    depth: 8,
     best: 'AI-assisted, test-backed shipping',
   },
 ];
@@ -137,21 +133,6 @@ function SkillCard({ category, index }) {
       <h3 className="skill-card__title">{category.title}</h3>
       <p className="skill-card__tag">{category.tagline}</p>
 
-      <div className="skill-meter" aria-label={`Depth: ${category.depth} out of 10`}>
-        <span className="skill-meter__label">Depth</span>
-        <span className="skill-meter__bars" aria-hidden="true">
-          {Array.from({ length: 10 }, (_, i) => (
-            <i
-              key={i}
-              className={i < category.depth ? 'on' : ''}
-              style={{ '--d': i }}
-            />
-          ))}
-        </span>
-        <span className="skill-meter__val">
-          {String(category.depth).padStart(2, '0')} / 10
-        </span>
-      </div>
 
       <ul className="skill-card__list">
         {category.items.map((item, i) => (

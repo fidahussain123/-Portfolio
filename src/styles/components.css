@@ -727,38 +727,6 @@
 }
 .skill-card__chip img { width: 14px; height: 14px; display: block; }
 
-/* Depth meter — segments fill one by one on reveal */
-.skill-meter {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 2.4rem;
-}
-.skill-meter__label,
-.skill-meter__val {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-.skill-meter__val { font-variant-numeric: tabular-nums; }
-.skill-meter__bars {
-  display: flex;
-  gap: 4px;
-  flex: 1;
-}
-.skill-meter__bars i {
-  height: 6px;
-  flex: 1;
-  border-radius: 3px;
-  background: var(--surface-2);
-  transition: background 0.4s var(--ease-out) calc(0.3s + var(--d) * 70ms);
-}
-.skill-card.is-revealed .skill-meter__bars i.on {
-  background: var(--accent);
-}
-
 /* Best-at footer */
 .skill-card__best {
   margin-top: 2.6rem;
@@ -790,8 +758,6 @@
     transform: none;
     transition: none;
   }
-  .skill-meter__bars i { transition: none; }
-  .skill-card.is-revealed .skill-meter__bars i.on { background: var(--accent); }
 }
 
 @media (prefers-reduced-motion: reduce) {
